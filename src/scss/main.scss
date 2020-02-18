@@ -1,0 +1,264 @@
+@import 'reset';
+@import 'grid';
+@import 'values';
+@import 'elements';
+@import 'fonts';
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+
+.wrapper {
+	padding: 0 80px;
+}
+
+.header {
+	background-image: url('../images/header/background.jpg');
+	background-size: cover;
+	padding-top: 50px;
+	min-height: 700px;
+	max-width: 1600px;
+	margin: 0 auto;
+
+	&__top {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+
+		.logo {
+			cursor: pointer;
+			img {
+				width: 100%;
+			}
+		}
+
+		.topMenu {
+			flex-grow: 0.15;
+			font-family: 'Raleway', sans-serif;
+			font-weight: 600;
+
+			&__item {
+				padding: 7px 20px;
+				cursor: pointer;
+				color: white;
+
+				&_active {
+					color: black;
+				}
+				&_nav {
+					display: none;
+					font-family: FontAwesome;
+					color: white;
+				}
+			}
+			&__item:hover {
+				border-bottom: 2px solid white;
+			}
+		}
+		.sign_up_btn {
+			width: 82px;
+			padding: 5px 0;
+			outline: none;
+			background-color: transparent;
+			color: white;
+			border: 1px solid white;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.sign_up_btn:hover {
+			background-color: rgba(200, 100, 100, 0.25);
+		}
+	}
+
+	&__elements {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 150px;
+		color: white;
+		font-family: 'Raleway', sans-serif;
+
+		.lorem {
+			width: 50%;
+			&__title {
+				width: 80%;
+				h1 {
+					text-transform: uppercase;
+					font-size: 55px;
+					font-weight: 800;
+				}
+			}
+			&__text {
+				width: 83%;
+				margin-top: 5px;
+				font-weight: 400;
+				font-size: 18px;
+				line-height: 36px;
+			}
+			&__btns {
+				margin-top: 30px;
+
+				.buy_btn {
+					@include btn;
+					color: white;
+					margin-right: 28px;
+					background-color: $button_blue;
+					font-family: 'Roboto', sans-serif;
+				}
+				.free_btn {
+					@include btn(160px);
+					font-family: 'Raleway', sans-serif;
+					font-weight: bold;
+					background-color: white;
+				}
+			}
+		}
+		.video {
+			width: 42%;
+			iframe {
+				width: 100%;
+				height: 320px;
+			}
+		}
+	}
+}
+
+.eu {
+	max-width: 1600px;
+	margin: 95px auto 100px auto;
+	font-family: 'Raleway', sans-serif;
+
+	&__title {
+		text-align: center;
+		width: 35%;
+		margin: 0 auto;
+
+		h1 {
+			line-height: 45px;
+			font-size: 45px;
+			font-weight: 600;
+		}
+		h2 {
+			margin: 15px 0;
+			font-size: 25px;
+			line-height: 25px;
+			color: $extra_light_text_color;
+			font-weight: 600;
+		}
+		p {
+			margin: 0 auto;
+			font-size: 15px;
+			line-height: 26px;
+			color: $extra_light_text_color;
+		}
+	}
+
+	&__blocks {
+		@include row();
+		justify-content: space-between;
+		margin-top: 75px;
+		margin-bottom: 55px;
+
+		@media screen and (max-width: 768px) {
+			justify-content: center;
+		}
+
+		.block {
+			@include col-lg(3);
+			@include col-md(6);
+			@include col-sm(9);
+
+			text-align: center;
+			width: calc(100% / 12 * 3 - 10px);
+			margin: 20px 0px;
+
+			&__title {
+				margin-top: 40px;
+				line-height: 20px;
+				font-size: 20px;
+				font-weight: 600;
+			}
+			&__text {
+				margin-top: 12px;
+				font-size: 15px;
+				line-height: 20px;
+				color: $light_text_color;
+			}
+		}
+	}
+
+	&__btn {
+		@include btn;
+
+		display: block;
+		margin: 0px auto;
+		color: white;
+		background-color: $button_green;
+		font-size: 15px;
+		font-family: Raleway, sans-serif;
+		font-weight: bold;
+	}
+}
+
+.counts {
+	@include row;
+	max-width: 1600px;
+	margin: 0 auto;
+
+	&__item {
+		@include col(3);
+		@include col-lg(6);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 150px;
+
+		&_business {
+			background-color: $turquoise;
+			color: $turquoise;
+		}
+		&_downloads {
+			background-color: $blue;
+			color: $blue;
+		}
+		&_freeInstalls {
+			background-color: $violet;
+			color: $violet;
+		}
+		&_proUsers {
+			background-color: $purple;
+			color: $purple;
+		}
+		&__icon {
+			display: block;
+			width: 60px;
+			height: 60px;
+			margin-right: 25px;
+			border-radius: 50%;
+			background-color: white;
+			font-family: FontAwesome;
+			font-size: 30px;
+			text-align: center;
+			line-height: 60px;
+		}
+		&__text {
+			display: block;
+			color: white;
+			font-size: 20px;
+			font-family: Raleway, sans-serif;
+			font-weight: 900;
+		}
+	}
+}
+
+
+
+
+.pixel_perfect {
+	display: none;
+	position: absolute;
+	top: 0;
+	opacity: 0.5;
+	z-index: 99;
+}
+
+@import 'media';

@@ -1,0 +1,38 @@
+@mixin row() {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+@mixin col($n) {
+	width: calc(100% / 12 * #{$n});
+}
+
+@mixin col-xl($n) {
+	@media screen and (max-width: 1600px) {
+		width: calc(100% / 12 * #{$n});
+	}
+}
+
+@mixin col-lg($n) {
+	@media screen and (max-width: 1200px) {
+		width: calc(100% / 12 * #{$n});
+	}
+}
+
+@mixin col-md($n) {
+	@media screen and (max-width: 768px) {
+		width: calc(100% / 12 * #{$n});
+	}
+}
+
+@mixin col-sm($n) {
+	@media screen and (max-width: 560px) {
+		width: calc(100% / 12 * #{$n});
+	}
+}
+
+@mixin col-xs($n) {
+	@media screen and (max-width: 320px) {
+		width: calc(100% / 12 * #{$n});
+	}
+}
